@@ -70,13 +70,6 @@ footballDataRequest.method = "GET"
 footballDataRequest.headers = {'X-Auth-Token': footballDataKey}
 let fbResponse = await footballDataRequest.loadJSON()
 
-// next match stadium request
-var stadiumRequest = new Request(teamAPI + homeId)
-stadiumRequest.method = "GET"
-stadiumRequest.headers = {'X-Auth-Token': footballDataKey}
-let teamInfo = await stadiumRequest.loadJSON()
-
-
 /* -- parse the data -- */
 
 // next rival match info
@@ -84,6 +77,12 @@ let nextRival = fbResponse["matches"][0]
 
 let homeId = nextRival["homeTeam"]["id"]
 let awayId = nextRival["awayTeam"]["id"]
+
+// next match stadium request
+var stadiumRequest = new Request(teamAPI + homeId)
+stadiumRequest.method = "GET"
+stadiumRequest.headers = {'X-Auth-Token': footballDataKey}
+let teamInfo = await stadiumRequest.loadJSON()
 let stadium = teamInfo["venue"]
 
 // parse date
