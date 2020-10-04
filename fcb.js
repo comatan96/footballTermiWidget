@@ -11,27 +11,11 @@
 // icon-color: deep-purple; icon-glyph: image;
 
 
-/* -- PREVIEW YOUR WIDGET -- */
-
 // Change to true to see a preview of your widget.
 const testMode = true
 
 // Optionally specify the size of your widget preview.
 const widgetSize = "medium"
-
-/* -- FORMATTING -- */
-
-// Change to false to show the date only.
-const showEvents = true
-
-// Specify how many events to show.
-const numberOfEvents = 2
-
-// check your team id
-const fcbLogo = "https://crests.football-data.org/"
-
-
-/* -- SPACING -- */
 
 // Can be top, middle, or bottom.
 const verticalAlignment = "middle"
@@ -39,11 +23,9 @@ const verticalAlignment = "middle"
 // Can be left, center, or right.
 const horizontalAlignment = "center"
 
-/* -- FONTS AND TEXT -- */
-
 // Use iosfonts.com, or change to "" for the system font.
-// const fontName = "Hoefler Text"
 const fontName = "DIN condensed"
+
 // Find colors on htmlcolorcodes.com
 const fontColor = new Color("#ffffff")
 
@@ -53,16 +35,17 @@ const competitionAndStadiumSize = 25
 const nextRivalDateSize = 25
 const nextRivalNameSize = 30
 
-/* -- RESET YOUR WIDGET -- */
-
 // Change to true to reset the widget background.
 const resetWidget = false
+
+// background image
+const background = "https://www.fcbarcelonanoticias.com/uploads/s1/11/69/48/3/camp-nou-nuevo-constructoras.jpeg"
 
 // ============== Logic of the script
 
 let widget = new ListWidget()
 
-let img = new Request("https://www.fcbarcelonanoticias.com/uploads/s1/11/69/48/3/camp-nou-nuevo-constructoras.jpeg")
+let img = new Request(background)
 bgimg = await img.loadImage()
 
 widget.backgroundImage = bgimg
@@ -77,7 +60,8 @@ let widgetText = []
 
 // get the data from the API
 const footballDataKey = "YOUR-API-KEY";
-const footballData = "https://api.football-data.org/v2/teams/81/matches?status=SCHEDULED";
+const myTeamId = 81
+const footballData = "https://api.football-data.org/v2/teams/" + myTeamId + "/matches?status=SCHEDULED";
 const teamAPI = "https://api.football-data.org/v2/teams/"
 
 // next match request
