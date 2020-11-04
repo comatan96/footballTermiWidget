@@ -3,7 +3,7 @@ based on https://github.com/evandcoleman/scriptable
 ## iOS 14 Scriptable widget for the next FCBarcelona game + some info
 # Screenshot
 
-![screenshot of the widget](./screenshot.jpg)
+![screenshot of the widget](./capture.jpg)
 
 # How to use:
 1. Set the ```TEAM_ID``` variable with your team's id
