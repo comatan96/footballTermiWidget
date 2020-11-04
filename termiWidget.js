@@ -3,7 +3,7 @@
 // icon-color: teal; icon-glyph: calculator;
 
 // Change these to your usernames!
-const user = "matan";
+const user = "";
 
 // API PARAMETERS !important
 // WEATHER_API_KEY, you need an Open Weather API Key
